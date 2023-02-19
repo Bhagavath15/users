@@ -39,7 +39,7 @@ function EditUserList({ userList }) {
         onSubmit: (newUpdate) => {
             console.log("form value", newUpdate)
             UpdateData(newUpdate)
-            navigate("/user")
+            navigate("/")
         }
     });
 
@@ -65,19 +65,55 @@ function EditUserList({ userList }) {
     };
     return (
         <div className="editUser">
-            <form onSubmit={handleSubmit}>
-                <TextField name="id" onBlur={handleBlur} onChange={handleChange} value={values.id} id="outlined-basic" label="id" variant="outlined" />
-                {/* {userList.id} */}
+            <form onSubmit={handleSubmit} >
+                <TextField name="id"
+                    fullWidth sx={{ m: 1 }}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    value={values.id}
+                    id="outlined-basic"
+                    label="id"
+                    variant="standard"
+                    error={touched.id && errors.id}
+                /><br />
                 {touched.id && errors.id ? errors.id : null}<br />
-                <TextField name="name" onBlur={handleBlur} onChange={handleChange} value={values.name} id="outlined-basic" label="Name" variant="outlined" />
+                <TextField name="name"
+                    fullWidth sx={{ m: 1 }} onBlur={handleBlur}
+                    onChange={handleChange}
+                    value={values.name}
+                    id="outlined-basic" label="Name"
+                    variant="standard"
+                    error={touched.name && errors.name} /><br />
                 {touched.name && errors.name ? errors.name : null}<br />
-                <TextField name="email" onBlur={handleBlur} onChange={handleChange} value={values.email} id="outlined-basic" label="Email" variant="outlined" />
+                <TextField name="email"
+                    fullWidth sx={{ m: 1 }}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    value={values.email}
+                    id="outlined-basic" label="Email"
+                    variant="standard"
+                    error={touched.email && errors.email} /><br />
                 {touched.email && errors.email ? errors.email : null}<br />
-                <TextField name="phoneNo" onBlur={handleBlur} onChange={handleChange} value={values.phoneNo} id="outlined-basic" label="Phone Number" variant="outlined" />
+                <TextField name="phoneNo"
+                    fullWidth sx={{ m: 1 }}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    value={values.phoneNo} id="outlined-basic"
+                    label="Phone Number" variant="standard"
+                    error={touched.phoneNo && errors.phoneNo} /><br />
                 {touched.phoneNo && errors.phoneNo ? errors.phoneNo : null}<br />
-                <TextField name="address" onBlur={handleBlur} onChange={handleChange} value={values.address} id="outlined-basic" label="Address" variant="outlined" />
+                <TextField
+                    name="address"
+                    fullWidth sx={{ m: 1 }}
+                    onBlur={handleBlur}
+                    onChange={handleChange} value={values.address}
+                    id="outlined-basic" label="Address"
+                    variant="standard"
+                    error={touched.address && errors.address} /><br />
                 {touched.address && errors.address ? errors.address : null}<br />
-                <Button color="success" variant="outlined" type="submit" >SAVE</Button>
+                <Button color="success"
+                    fullWidth sx={{ m: 1 }}
+                    variant="outlined" type="submit" >SAVE</Button>
             </form>
         </div>
     );
