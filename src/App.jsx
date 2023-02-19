@@ -53,6 +53,7 @@ export default function App() {
           </Toolbar>
         </AppBar>
       </Box>
+
       {/* <HorizontalBar />
       <UserList /> */}
       <Routes>
@@ -95,26 +96,31 @@ function UserList() {
   }
 
   return (
-    <div className="userlist">
-      {userList.map((usr, index) => <User user={usr} key={index.id}
-        deleteButton={
-          <IconButton
-            onClick={() => deleteUser(usr.id)}
-            color="primary"
-            aria-label="delete">
-            <DeleteIcon />
-          </IconButton>}
-        editButton={
-          <IconButton
-            onClick={() => {
-              navigate(`/edituser/${usr.id}`)
-              console.log("edit", usr.id)
-            }}
-            color="primary"
-            aria-label="edit">
-            <EditIcon />
-          </IconButton>} />)}
-    </div >
+    <div >
+      <h1 className="name">User lists</h1>
+      <div className="userlist">
+        {userList.map((usr, index) => <User user={usr} key={index.id}
+          deleteButton={
+            <IconButton
+              onClick={() => deleteUser(usr.id)}
+              color="primary"
+              aria-label="delete">
+              <DeleteIcon />
+            </IconButton>}
+          editButton={
+            <IconButton
+              onClick={() => {
+                navigate(`/edituser/${usr.id}`)
+                console.log("edit", usr.id)
+              }}
+              color="primary"
+              aria-label="edit">
+              <EditIcon />
+            </IconButton>} />)}
+      </div >
+    </div>
+
+
   )
 }
 function User({ user, id, deleteButton, editButton }) {

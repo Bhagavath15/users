@@ -4,6 +4,12 @@ body {
     margin: 0px
 }
 
+.name {
+    margin: 10px;
+    text-align: center;
+    text-decoration: underline;
+}
+
 .userlist {
     margin-top: 20px;
     display: flex;
