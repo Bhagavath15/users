@@ -60,6 +60,7 @@ const formValidationSchema = yup.object({
 });
 
 export function AddUser() {
+    const navigate = useNavigate()
     const { handleSubmit, handleChange, handleBlur, values, touched, errors } = useFormik({
         initialValues: {
             id: "",
@@ -72,6 +73,7 @@ export function AddUser() {
         onSubmit: (newdata) => {
             console.log("form value", newdata)
             addData(newdata)
+            navigate("/user")
         }
     });
     // const [id, setId] = useState("");

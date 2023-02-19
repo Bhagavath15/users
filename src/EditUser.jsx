@@ -15,7 +15,7 @@ const formValidationSchema = yup.object({
 });
 export function EditUser() {
     const { id } = useParams()
-    const navigate = useNavigate()
+
     const [userList, setUserList] = useState(null)
     useEffect(() => {
         fetch(`https://63f17e9bff1b45a1a44cefb6.mockapi.io/user/${id}`)
@@ -26,7 +26,7 @@ export function EditUser() {
 }
 
 function EditUserList({ userList }) {
-
+    const navigate = useNavigate()
     const { handleSubmit, handleChange, handleBlur, values, touched, errors } = useFormik({
         initialValues: {
             id: userList.id,
@@ -39,6 +39,7 @@ function EditUserList({ userList }) {
         onSubmit: (newUpdate) => {
             console.log("form value", newUpdate)
             UpdateData(newUpdate)
+            navigate("/user")
         }
     });
 
