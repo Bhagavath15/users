@@ -89,7 +89,7 @@ function UserList() {
 
   const deleteUser = async (id) => {
     console.log("deleting...", id)
-    await fetch(`${API}/${id}`, {
+    await fetch(`${API}/users/${id}`, {
       method: "DELETE"
     }).then(() => getUsers())
   }
