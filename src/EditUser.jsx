@@ -4,7 +4,7 @@ import * as yup from "yup";
 import TextField from '@mui/material/TextField';
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from "react-router-dom"
-
+import { API } from "./global.js"
 
 const formValidationSchema = yup.object({
     id: yup.number().required(),
@@ -18,7 +18,7 @@ export function EditUser() {
 
     const [userList, setUserList] = useState(null)
     useEffect(() => {
-        fetch(`https://63f17e9bff1b45a1a44cefb6.mockapi.io/user/${id}`)
+        fetch(`${API}/user/${id}`)
             .then((data) => data.json())
             .then((urs) => setUserList(urs))
     }, [])
@@ -53,7 +53,7 @@ function EditUserList({ userList }) {
         //     address: address
         // };
 
-        fetch(`https://63f17e9bff1b45a1a44cefb6.mockapi.io/user/${userList.id}`,
+        fetch(`${API}/user/${userList.id}`,
             {
                 method: "PUT",
                 body: JSON.stringify(newUpdate),

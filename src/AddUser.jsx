@@ -50,7 +50,8 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import { API } from "./global.js"
 
 const formValidationSchema = yup.object({
     id: yup.number().required(),
@@ -92,7 +93,7 @@ export function AddUser() {
         //     address: address
         // };
 
-        fetch("https://63f17e9bff1b45a1a44cefb6.mockapi.io/user",
+        fetch(`${API}/user`, //https://63f17e9bff1b45a1a44cefb6.mockapi.io/user
             {
                 method: "POST",
                 body: JSON.stringify(newdata),

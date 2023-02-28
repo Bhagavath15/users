@@ -18,7 +18,7 @@ import { EditUser } from './EditUser';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Stack from '@mui/material/Stack';
 import EditIcon from '@mui/icons-material/Edit';
-
+import { API } from "./global.js"
 
 export default function App() {
   const navigate = useNavigate()
@@ -81,7 +81,7 @@ function UserList() {
   const navigate = useNavigate()
   const [userList, setUserList] = useState([])
   const getUsers = () => {
-    fetch("https://63f17e9bff1b45a1a44cefb6.mockapi.io/user",
+    fetch(`${API}/user`,
       { method: "GET" })
       .then((data) => data.json())
       .then((usr) => setUserList(usr))
@@ -90,7 +90,7 @@ function UserList() {
 
   const deleteUser = async (id) => {
     console.log("deleting...", id)
-    await fetch(`https://63f17e9bff1b45a1a44cefb6.mockapi.io/user/${id}`, {
+    await fetch(`${API}/${id}`, {
       method: "DELETE"
     }).then(() => getUsers())
   }
