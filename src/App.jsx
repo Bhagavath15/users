@@ -80,7 +80,7 @@ function UserList() {
   const navigate = useNavigate()
   const [userList, setUserList] = useState([])
   const getUsers = () => {
-    fetch(`${API}/user`,
+    fetch(`${API}/users`,
       { method: "GET" })
       .then((data) => data.json())
       .then((usr) => setUserList(usr))

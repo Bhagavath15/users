@@ -93,7 +93,7 @@ export function AddUser() {
         //     address: address
         // };
 
-        fetch(`${API}/user`, //https://63f17e9bff1b45a1a44cefb6.mockapi.io/user
+        fetch(`${API}/users`, //https://63f17e9bff1b45a1a44cefb6.mockapi.io/user
             {
                 method: "POST",
                 body: JSON.stringify(newdata),

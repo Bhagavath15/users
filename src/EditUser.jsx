@@ -18,7 +18,7 @@ export function EditUser() {
 
     const [userList, setUserList] = useState(null)
     useEffect(() => {
-        fetch(`${API}/user/${id}`)
+        fetch(`${API}/users/${id}`)
             .then((data) => data.json())
             .then((urs) => setUserList(urs))
     }, [])
@@ -53,7 +53,7 @@ function EditUserList({ userList }) {
         //     address: address
         // };
 
-        fetch(`${API}/user/${userList.id}`,
+        fetch(`${API}/users/${userList.id}`,
             {
                 method: "PUT",
                 body: JSON.stringify(newUpdate),
