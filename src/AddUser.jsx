@@ -51,7 +51,7 @@ import TextField from '@mui/material/TextField';
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
-import { API } from "./global.js"
+import { API } from "./global"
 
 const formValidationSchema = yup.object({
     id: yup.number().required(),

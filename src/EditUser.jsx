@@ -4,7 +4,7 @@ import * as yup from "yup";
 import TextField from '@mui/material/TextField';
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from "react-router-dom"
-import { API } from "./global.js"
+import { API } from "./global"
 
 const formValidationSchema = yup.object({
     id: yup.number().required(),

@@ -18,8 +18,7 @@ import { EditUser } from './EditUser';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Stack from '@mui/material/Stack';
 import EditIcon from '@mui/icons-material/Edit';
-import { API } from "./global.js"
-
+import { API } from "./global"
 export default function App() {
   const navigate = useNavigate()
 
